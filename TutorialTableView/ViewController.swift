@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var cardTableView: UITableView!
+    @IBOutlet weak var cardTableView: UITableView! // 
 
     var cardArray: [String] = ["Ahmad", "Yovi"]
     var colorArray: [UIColor] = [.black,.blue]
