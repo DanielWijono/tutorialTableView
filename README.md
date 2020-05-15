@@ -12,4 +12,4 @@ This github is all about implementing simple UITableView and functionalities wit
 
 ### Apps UI
 
-![alt text](https://github.com/DanielWijono/tutorialTableView/blob/master/Screen%20Shot%202020-05-15%20at%2019.41.36.png)
+<img src="https://github.com/DanielWijono/tutorialTableView/blob/master/Screen%20Shot%202020-05-15%20at%2019.41.36.png" width="250">
