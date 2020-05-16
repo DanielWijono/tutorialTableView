@@ -15,6 +15,8 @@
 		5B73987D2466D2FA000CA094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B73987B2466D2FA000CA094 /* LaunchScreen.storyboard */; };
 		5B7398862466D468000CA094 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7398842466D468000CA094 /* CardCell.swift */; };
 		5B7398872466D468000CA094 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7398852466D468000CA094 /* CardCell.xib */; };
+		5BE9FBA0246FD22B00927677 /* CardTypeTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE9FB9E246FD22B00927677 /* CardTypeTwoCell.swift */; };
+		5BE9FBA1246FD22B00927677 /* CardTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE9FB9F246FD22B00927677 /* CardTypeTwoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		5B73987E2466D2FA000CA094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7398842466D468000CA094 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		5B7398852466D468000CA094 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
+		5BE9FB9E246FD22B00927677 /* CardTypeTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypeTwoCell.swift; sourceTree = "<group>"; };
+		5BE9FB9F246FD22B00927677 /* CardTypeTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTypeTwoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				5B73987E2466D2FA000CA094 /* Info.plist */,
 				5B7398842466D468000CA094 /* CardCell.swift */,
 				5B7398852466D468000CA094 /* CardCell.xib */,
+				5BE9FB9E246FD22B00927677 /* CardTypeTwoCell.swift */,
+				5BE9FB9F246FD22B00927677 /* CardTypeTwoCell.xib */,
 			);
 			path = TutorialTableView;
 			sourceTree = "<group>";
@@ -134,6 +140,7 @@
 				5B73987D2466D2FA000CA094 /* LaunchScreen.storyboard in Resources */,
 				5B73987A2466D2FA000CA094 /* Assets.xcassets in Resources */,
 				5B7398782466D2F7000CA094 /* Main.storyboard in Resources */,
+				5BE9FBA1246FD22B00927677 /* CardTypeTwoCell.xib in Resources */,
 				5B7398872466D468000CA094 /* CardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +155,7 @@
 				5B7398752466D2F7000CA094 /* ViewController.swift in Sources */,
 				5B7398712466D2F7000CA094 /* AppDelegate.swift in Sources */,
 				5B7398732466D2F7000CA094 /* SceneDelegate.swift in Sources */,
+				5BE9FBA0246FD22B00927677 /* CardTypeTwoCell.swift in Sources */,
 				5B7398862466D468000CA094 /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

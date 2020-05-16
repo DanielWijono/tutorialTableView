@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  TutorialTableView
+//  tutorialPIODEC
 //
-//  Created by Daniel Wijono on 09/05/20.
+//  Created by Daniel Wijono on 16/05/20.
 //  Copyright © 2020 Daniel Wijono. All rights reserved.
 //
 
@@ -10,11 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var cardTableView: UITableView! // 
+    @IBOutlet weak var cardTableView: UITableView!
 
-    var cardArray: [String] = ["Ahmad", "Yovi"]
-    var colorArray: [UIColor] = [.black,.blue]
     let cardCell = "CardCell"
+    let cardTypeTwoCell = "CardTypeTwoCell"
+
+    var cardArray: [String] = ["Yovi", "Ilga", "Ahmad", "Budi"]
+    var colorArray: [UIColor] = [.black, .blue,.black, .blue]
+    var cardTypeTwoArray: [String] = ["Budi", "Giga", "Mantap"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +28,20 @@ class ViewController: UIViewController {
         cardTableView.delegate = self
         cardTableView.dataSource = self
         cardTableView.register(UINib(nibName: cardCell, bundle: nil), forCellReuseIdentifier: cardCell)
+        cardTableView.register(UINib(nibName: cardTypeTwoCell, bundle: nil), forCellReuseIdentifier: cardTypeTwoCell)
         cardTableView.bounces = false
-        cardTableView.allowsSelection = true
-        cardTableView.tableFooterView = UIView() // This will remove extra separators from tableview
+        cardTableView.tableFooterView = UIView()
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cardArray.count
+        if section == 0 {
+            return cardArray.count
+        } else if section == 1 {
+            return cardTypeTwoArray.count
+        }
+        return 0
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,15 +49,26 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: cardCell, for: indexPath) as? CardCell {
 
-            cell.cardImage.backgroundColor = colorArray[indexPath.row]
-            cell.cardImage.layer.cornerRadius = cell.cardImage.frame.size.width / 2
-            cell.cardLabel.text = cardArray[indexPath.row]
-            cell.selectionStyle = .none
+        if indexPath.section == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: cardCell, for: indexPath) as? CardCell {
 
-            return cell
+                cell.cardLabel.text = cardArray[indexPath.row]
+                cell.cardImage.layer.cornerRadius = cell.cardImage.frame.size.width / 2
+                cell.cardImage.backgroundColor = colorArray[indexPath.row]
+                cell.selectionStyle = .none
+
+                return cell
+            }
+        } else if indexPath.section == 1 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: cardTypeTwoCell, for: indexPath) as? CardTypeTwoCell {
+
+                cell.cardTypeTwoLabel.text = cardTypeTwoArray[indexPath.row]
+
+                return cell
+            }
         }
+
         return UITableViewCell()
     }
 
@@ -63,14 +82,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         label.textColor = .black
         view.addSubview(label)
 
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
 
         return view
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,9 +100,4 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
 }
-
-
-
-
-
 
